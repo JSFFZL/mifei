@@ -1,0 +1,78 @@
+html, body, div, p, iframe, ul, ol, dl, dt, dd, li, dl, h1, h2, h3, h4, table, th, td, input, span, a, img, button, select, textarea {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+body {
+  color: #000000;
+  background: #FFF;
+}
+
+.clear {
+  clear: both;
+  height: 1px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: -1px;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #F00;
+}
+
+.header {
+  width: 100%;
+  height: 0.93333rem;
+  line-height: 0.93333rem;
+  font-size: 0.48rem;
+  background: pink;
+  text-align: left;
+}
+
+label {
+  width: 100%;
+  height: 2.13333rem;
+  font-size: 0.42667rem;
+  display: flex;
+  align-items: center;
+}
+
+label input {
+  height: 1.2rem;
+  border: solid 0.02667rem #eee;
+  font-size: 0.48rem;
+}
+
+.btn {
+  width: 2.66667rem;
+  height: 1.33333rem;
+  line-height: 1.33333rem;
+  margin: 0.8rem auto;
+  font-size: 0.48rem;
+  color: #fff;
+  text-align: center;
+  background: blue;
+}

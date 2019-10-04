@@ -1,0 +1,35 @@
+@import "px2rem";
+@import "reset";
+
+.header{
+    width: 100%;
+    height: rem(35px);
+    line-height: rem(35px);
+    font-size: rem(18px);
+    background: pink;
+    text-align: left;
+}
+
+label{
+    width: 100%;
+    height: rem(80px);
+    font-size: rem(16px);
+    display: flex;
+    align-items: center;
+    input{
+        
+        height: rem(45px);
+        border: solid rem(1px) #eee;
+        font-size: rem(18px);
+    }
+}
+.btn{
+    width: rem(100px);
+    height: rem(50px);
+    line-height: rem(50px);
+    margin: rem(30px) auto;
+    font-size: rem(18px);
+    color: #fff;
+    text-align: center;
+    background: blue;
+}

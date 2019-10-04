@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加商品</title>
+    <link rel="stylesheet" href="css/add.min.css">
+    <script src="js/flexible.js"></script>
+</head>
+
+<body>
+    <div class="header">返回</div>
+    <label for="">商品名称：<input type="text" class="txt" placeholder="商品名称"></label>
+    <br />
+    <label for="">商品数量：<input type="number" class="num" placeholder="商品数量（个）"></label>
+    <br />
+    <div class="btn">添加</div>
+    <script src="js/dom.js"></script>
+    <script>
+        let getData = JSON.parse(localStorage.getItem("mifei")) || [];
+
+        $(".btn").onclick = () => {
+            let txt = $(".txt").value;
+            let num = $(".num").value;
+
+            if (txt && num) {
+                let obj = {
+                    "name": txt,
+                    "num": num
+                };
+
+                getData.push(obj);
+
+                localStorage.setItem("mifei", JSON.stringify(getData));
+
+                location.href = "index.html";
+            } else {
+                alert("内容不能为空！")
+            }
+
+
+        }
+
+        $(".header").onclick = () => {
+            location.href = "index.html";
+        }
+    </script>
+</body>
+
+</html>

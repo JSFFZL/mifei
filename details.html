@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品修改</title>
+    <link rel="stylesheet" href="css/details.min.css">
+    <script src="js/flexible.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="header">返回</div>
+        <div class="main">
+            <label for="">商品名称：<input class="txt" type="text"></label>
+            <label for="">商品数量：<p class="minus">-</p><input class="num" type="number">
+                <p class="plus">+</p>
+            </label>
+            <div class="btn">确认修改</div>
+        </div>
+        <div class="delete">删除商品</div>
+    </div>
+    <script src="js/dom.js"></script>
+    <script>
+        let getData = JSON.parse(localStorage.getItem("mifei"));
+        let index = localStorage.getItem("indexMi");
+        let nums = 0;
+       
+        
+        if (getData) {
+            $(".txt").value = getData[index].name;
+            $(".num").value = getData[index].num;
+            nums = $(".num").value;
+        }
+
+        $(".btn").onclick = ()=>{
+            getData[index].name = $(".txt").value;
+            getData[index].num = $(".num").value;
+            localStorage.setItem("mifei",JSON.stringify(getData));
+            location.href = "index.html";
+        }
+
+         
+        $(".delete").onclick = () => {
+            getData.splice(index,1);
+            localStorage.setItem("mifei",JSON.stringify(getData));
+            location.href = "index.html";
+        }
+
+        $(".header").onclick = () => {
+            location.href = "index.html";
+        }
+
+        $(".minus").onclick = ()=>{
+            console.log(nums);
+            
+            $(".num").value = nums > 0 ? --nums : 0;
+        }
+
+        $(".plus").onclick = ()=>{
+            console.log(nums);
+            
+            $(".num").value = ++nums;
+        }
+
+
+    </script>
+</body>
+
+</html>
